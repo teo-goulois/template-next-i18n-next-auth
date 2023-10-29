@@ -1,0 +1,14 @@
+{
+  "Index": {
+    "title": "Bonjour !"
+  },
+  "LocaleSwitcher": {
+    "label": "Changer de langue :",
+    "locale": "{locale, select, fr {Français} en {Anglais} other {Unconnu}}"
+  },
+  "ClientDemonstration": {
+    "title": "Client demonstration",
+    "description": "Cette page est une démonstration de l'utilisation du client de traduction. Elle est disponible en français et en anglais. "
+  }
+  
+}

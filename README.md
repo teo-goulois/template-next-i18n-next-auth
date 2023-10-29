@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js 14 Boilerplate with Next-Intl
 
-## Getting Started
+## Table of Contents
 
-First, run the development server:
+- [Overview](#overview)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Running the Development Server](#running-the-development-server)
+- [Adding a New Language](#adding-a-new-language)
+- [Building for Production](#building-for-production)
+- [Warnings](#warnings)
+- [Documentation Links](#documentation-links)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Overview
+
+This is a boilerplate project for Next.js 14 with Next-Intl for internationalization support. It is designed to provide a quick starting point for developers building React-based web applications with a focus on multiple languages.
+
+## Prerequisites
+
+- Node.js v18 or above
+- npm v7 or above
+
+## Installation
+
+### Step 1: Clone the Repository
+
+```bash
+git clone https://github.com/teo-goulois/template-next-14-i18n.git
+```
+
+### Step 2: Navigate to Project Directory
+
+```bash
+cd template-next-14-i18n
+```
+
+### Step 3: Install Dependencies
+
+```bash
+npm install
+```
+
+## Running the Development Server
+
+To start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your web browser to see the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Adding a New Language
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. **Create a New JSON File:** Under the `messages` directory, create a new JSON file, e.g., `fr.json` for French.
+2. **Add Translations:** Populate this JSON file with your translations.
 
-## Learn More
+## Building for Production
 
-To learn more about Next.js, take a look at the following resources:
+To create an optimized production build:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+To run the production build:
 
-## Deploy on Vercel
+```bash
+npm start
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Warnings
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Turbo Mode Incompatibility
+
+Please note that running the development server with the `--turbo` flag is not recommended due to the use of the `src` folder and middleware. The `--turbo` flag can result in unexpected behavior in this setup.
+
+```bash
+# Don't run the development server like this
+npm run dev -- --turbo
+```
+
+## Documentation Links
+
+- [Next.js 14 Documentation](https://nextjs.org/docs)
+- [Next-Intl Documentation](https://github.com/amannn/next-intl)
+
+## Contributing
+
+Contributions are welcome! Feel free to open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for more details.
