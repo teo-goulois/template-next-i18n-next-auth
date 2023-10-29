@@ -1,7 +1,12 @@
 "use client";
 
 import { PropsWithChildren } from "react";
+import NextAuthProvider from "./NextAuthProvider";
 
 export const Providers = ({ children }: PropsWithChildren) => {
-  return <>{children}</>;
+  return (
+    <>
+      <NextAuthProvider>{children}</NextAuthProvider>
+    </>
+  );
 };

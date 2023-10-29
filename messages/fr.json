@@ -9,6 +9,10 @@
   "ClientDemonstration": {
     "title": "Client demonstration",
     "description": "Cette page est une démonstration de l'utilisation du client de traduction. Elle est disponible en français et en anglais. "
+  },
+  "Dashboard": {
+    "title": "Dashboard",
+    "description": "Bienvenue sur le dashboard de l'application. Vous pouvez naviguer entre les différentes pages de l'application en utilisant le menu de gauche.",
+    "logout": "Déconnexion"
   }
-  
 }

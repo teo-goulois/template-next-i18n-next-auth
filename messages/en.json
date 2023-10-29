@@ -12,5 +12,10 @@
     },
     "fallbackDemonstration": {
         "title": "Fallback demonstration"
+    },
+    "Dashboard": {
+        "title": "Dashboard",
+        "description": "This page is rendered on the client side.",
+        "logout": "Logout"
     }
 }

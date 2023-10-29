@@ -1,4 +1,6 @@
-# Next.js 14 Boilerplate with Next-Intl
+# Next.js 14 Boilerplate with Next-Intl and Next-Auth
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Table of Contents
 
@@ -15,7 +17,7 @@
 
 ## Overview
 
-This is a boilerplate project for Next.js 14 with Next-Intl for internationalization support. It is designed to provide a quick starting point for developers building React-based web applications with a focus on multiple languages.
+This is a boilerplate project for Next.js 14 with Next-Intl for internationalization and Next-Auth for authentication support. It is designed to provide a quick starting point for developers building React-based web applications with a focus on multiple languages and secure user authentication.
 
 ## Prerequisites
 
@@ -27,13 +29,13 @@ This is a boilerplate project for Next.js 14 with Next-Intl for internationaliza
 ### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/teo-goulois/template-next-14-i18n.git
+git clone https://github.com/teo-goulois/template-next-i18n-next-auth.git
 ```
 
 ### Step 2: Navigate to Project Directory
 
 ```bash
-cd template-next-14-i18n
+cd template-next-i18n-next-auth
 ```
 
 ### Step 3: Install Dependencies
@@ -56,6 +58,27 @@ Open [http://localhost:3000](http://localhost:3000) in your web browser to see t
 
 1. **Create a New JSON File:** Under the `messages` directory, create a new JSON file, e.g., `fr.json` for French.
 2. **Add Translations:** Populate this JSON file with your translations.
+
+## Integrating Authentication with Next-Auth
+
+1. **Configure Providers:** In the `[...nextauth].ts` file, set up the providers you want to use for authentication.
+
+   ```typescript
+   import NextAuth from "next-auth";
+   import Providers from "next-auth/providers";
+
+   export default NextAuth({
+     providers: [
+       Providers.Google({
+         clientId: process.env.GOOGLE_CLIENT_ID,
+         clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+       }),
+       // Add other providers as needed
+     ],
+   });
+   ```
+
+2. **Environment Variables:** Don't forget to set up environment variables like `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` for authentication to work.
 
 ## Building for Production
 
@@ -86,6 +109,7 @@ npm run dev -- --turbo
 
 - [Next.js 14 Documentation](https://nextjs.org/docs)
 - [Next-Intl Documentation](https://github.com/amannn/next-intl)
+- [Next-Auth Documentation](https://https://next-auth.js.org/)
 
 ## Contributing
 

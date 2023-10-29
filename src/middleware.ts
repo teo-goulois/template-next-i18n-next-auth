@@ -1,17 +1,27 @@
 import createIntlMiddleware from "next-intl/middleware";
+import { withAuth } from "next-auth/middleware";
+
 import { locales } from "./navigation";
 import { NextRequest } from "next/server";
 
-const publicPages = [
-  "/",
-  "/login",
-  // (/secret requires auth)
-];
+const publicPages = ["/"];
 
 const intlMiddleware = createIntlMiddleware({
   locales,
   defaultLocale: "en",
 });
+
+const authMiddleware = withAuth(
+  // Note that this callback is only invoked if
+  // the `authorized` callback has returned `true`
+  // and not for pages listed in `pages`.
+  (req) => intlMiddleware(req),
+  {
+    callbacks: {
+      authorized: ({ token }) => token != null,
+    },
+  }
+);
 
 export function middleware(req: NextRequest) {
   const publicPathnameRegex = RegExp(
@@ -24,7 +34,7 @@ export function middleware(req: NextRequest) {
   if (isPublicPage) {
     return intlMiddleware(req);
   } else {
-    return (intlMiddleware as any)(req);
+    return (authMiddleware as any)(req);
   }
 }
 
